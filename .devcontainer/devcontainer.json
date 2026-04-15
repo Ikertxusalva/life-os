@@ -1,0 +1,38 @@
+{
+  "name": "Life OS",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/supabase/devcontainer-features/supabase-cli:1": {}
+  },
+  "forwardPorts": [3000],
+  "postCreateCommand": "npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode",
+        "GitHub.copilot"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+      }
+    }
+  },
+  "secrets": {
+    "NEXT_PUBLIC_SUPABASE_URL": {
+      "description": "URL de tu proyecto Supabase"
+    },
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": {
+      "description": "Clave anónima de Supabase"
+    },
+    "SUPABASE_SERVICE_ROLE_KEY": {
+      "description": "Clave service role de Supabase (solo servidor)"
+    },
+    "GEMINI_API_KEY": {
+      "description": "API key de Google Gemini"
+    }
+  }
+}
